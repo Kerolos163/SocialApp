@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dart",
+			"command": "dart",
+			"cwd": "",
+			"args": [
+				"doc",
+				"."
+			],
+			"problemMatcher": [],
+			"label": "dart: dart doc .",
+			"detail": "",
+			"group": "build"
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"apk"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "flutter: flutter build apk",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"install"
+			],
+			"problemMatcher": [],
+			"label": "flutter: flutter install",
+			"detail": ""
+		}
+	]
+}
