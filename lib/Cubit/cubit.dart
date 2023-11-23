@@ -1,12 +1,13 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+
 import 'package:social_app/Cubit/state.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 import '../Screens/Chats/Chats_Screen.dart';
 import '../Screens/Feeds/Feeds_Screen.dart';
@@ -389,6 +390,7 @@ class SocialAppCubit extends Cubit<SocialState> {
         .putFile(SendImg!)
         .then((value) {
       value.ref.getDownloadURL().then((value) {
+        log(value);
         SendMessage(receiverId: receiverId, DateTime: DateTime, text: text,image: value);
         // emit(SocialUploudCoverImageSuccessState());
       }).catchError((Error) {
